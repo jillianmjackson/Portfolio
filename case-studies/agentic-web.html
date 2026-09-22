@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agentic Web — Jillian Jackson</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=EB+Garamond:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/main.css" />
+</head>
+<body>
+
+  <!-- TOP NAV -->
+  <nav class="top-nav" aria-label="Primary">
+    <a class="nav-logo" href="../index.html">Jillian Jackson</a>
+    <ul class="nav-links">
+      <li><a href="../index.html#work">Projects</a></li>
+      <li><a href="#" download><!-- TODO: link resume file --> Resume</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../index.html">Home</a></li>
+    </ul>
+  </nav>
+
+  <div class="shallow-body">
+
+  <!-- STICKY LEFT COLUMN -->
+  <aside class="shallow-left is-scrollable">
+    <p class="shallow-meta">Lead Designer &mdash; Summer Internship</p>
+    <h1 class="shallow-title">Agentic Web: Designing a Campus-Scale Internet of Agents</h1>
+    <p class="shallow-desc">
+      As the sole designer on a three-person team (1 designer, 2 developers), I led the UX and interface design for the Agentic Web, a campus-scale "Internet of Agents" that lets researchers describe tasks in plain language and have the system automatically route them to the right AI agents. My work over the five-week sprint focused on turning a developer-built, technically-exposed prototype into an interface usable by three distinct audiences: non-technical researchers, agent developers, and PIs/admins.
+    </p>
+    <p class="shallow-desc">
+      I began with a heuristic audit of the live interface, producing eight prioritized findings across usability, admin/user separation, system status, and feedback — for example, flagging that raw API capability tags (email/calendar/delete_event) and debug info (gpt-4o-mini, ctx:) were being surfaced to end users, and that internal jargon like "ADS Agents" needed plain-language replacement. From there I defined the user flow around fully automatic, natural-language routing (so users never have to pick an agent), designed a full system-status model (idle / thinking / responding / error), added an empty state with suggested prompts, and introduced a per-response feedback loop.
+    </p>
+    <p class="shallow-desc">
+      I built an HTML prototype of the redesigned researcher view, began a separate admin view for agent management and monitoring, and prepared a PI presentation framing each design decision against an audit finding — closing with the open strategic question of whether agents should be visible to users at all.
+    </p>
+    <div class="shallow-tags">
+      <span class="shallow-tag">AI Agents</span>
+      <span class="shallow-tag">Heuristic Audit</span>
+      <span class="shallow-tag">Systems Design</span>
+    </div>
+  </aside>
+
+  <!-- SCROLLING RIGHT COLUMN -->
+  <main class="shallow-right">
+    <figure class="shallow-shot">
+      <div class="img-block"><span>Heuristic audit</span></div>
+      <figcaption class="shallow-caption">Heuristic audit of the live prototype — eight prioritized findings spanning usability, admin/user separation, system status, and feedback.</figcaption>
+    </figure>
+
+    <figure class="shallow-shot">
+      <div class="img-block"><span>Before / After</span></div>
+      <figcaption class="shallow-caption">Before: raw API capability tags (email, calendar, delete_event) and debug info (gpt-4o-mini, ctx:) exposed directly to end users. After: plain-language replacements for internal jargon like "ADS Agents."</figcaption>
+    </figure>
+
+    <figure class="shallow-shot">
+      <div class="img-block"><span>User flow</span></div>
+      <figcaption class="shallow-caption">User flow for fully automatic, natural-language routing — researchers describe a task in plain language and are never asked to pick an agent.</figcaption>
+    </figure>
+
+    <figure class="shallow-shot">
+      <div class="img-block"><span>System status states</span></div>
+      <figcaption class="shallow-caption">System-status model covering idle, thinking, responding, and error states, plus an empty state with suggested prompts.</figcaption>
+    </figure>
+
+    <figure class="shallow-shot">
+      <div class="img-block"><span>Feedback loop</span></div>
+      <figcaption class="shallow-caption">Per-response feedback loop, added so researchers can flag routing quality directly in the conversation.</figcaption>
+    </figure>
+
+    <figure class="shallow-shot">
+      <div class="img-block"><span>Researcher prototype</span></div>
+      <figcaption class="shallow-caption">HTML prototype of the redesigned researcher-facing view.</figcaption>
+    </figure>
+
+    <figure class="shallow-shot">
+      <div class="img-block"><span>Admin view</span></div>
+      <figcaption class="shallow-caption">Early admin view for agent management and monitoring, built for PIs and admins as a distinct audience from researchers.</figcaption>
+    </figure>
+
+    <figure class="shallow-shot">
+      <div class="img-block"><span>PI presentation</span></div>
+      <figcaption class="shallow-caption">PI presentation framing each design decision against an audit finding — closing with the open question of whether agents should be visible to users at all.</figcaption>
+    </figure>
+  </main>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="landing-footer">
+    <nav class="landing-nav" aria-label="Footer">
+      <a class="nav-logo" href="../index.html">Jillian Jackson</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#work">Projects</a></li>
+        <li><a href="#" download>Resume</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../index.html">Home</a></li>
+      </ul>
+    </nav>
+    <p class="footer-credit">&copy; 2026 Jillian Jackson</p>
+  </footer>
+
+</body>
+</html>
