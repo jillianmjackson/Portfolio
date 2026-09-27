@@ -549,6 +549,7 @@ footer {
 }
 
 .project-row {
+  position: relative; /* anchors .row-thumb */
   display: grid;
   grid-template-columns: 72px 1fr 150px 160px;
   /* Baseline (not center) pins year/role/duration to the title line,
@@ -621,6 +622,34 @@ footer {
 @media (hover: none) {
   .row-desc { grid-template-rows: 1fr; opacity: 1; }
   .row-desc > span { padding-top: 8px; }
+}
+
+/* Hover thumbnail — floats over the role/duration columns.
+   Absolutely positioned so it never affects row height;
+   pointer-events off so it can't trap the hover state. */
+.row-thumb {
+  position: absolute;
+  top: 50%;
+  right: 64px;
+  z-index: 2;
+  width: min(640px, 45vw); /* cap so it doesn't cover titles on narrower screens */
+  height: auto;
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(16px, -50%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.project-row:hover .row-thumb,
+.project-row:focus-visible .row-thumb {
+  opacity: 1;
+  transform: translate(0, -50%);
+}
+
+/* No hover on touch — and no room on small screens */
+@media (hover: none), (max-width: 900px) {
+  .row-thumb { display: none; }
 }
 
 .row-role,
