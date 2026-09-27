@@ -551,7 +551,9 @@ footer {
 .project-row {
   display: grid;
   grid-template-columns: 72px 1fr 150px 160px;
-  align-items: center;
+  /* Baseline (not center) pins year/role/duration to the title line,
+     so they don't shift when the hover description expands the row */
+  align-items: baseline;
   gap: 24px;
   padding: 40px 64px;
   text-decoration: none;
@@ -580,6 +582,46 @@ footer {
 }
 
 .project-row:hover .row-title { transform: translateX(8px); }
+
+/* Hover description — wrap title + desc in .row-main.
+   Grid-rows 0fr → 1fr animates height without a fixed max-height. */
+.row-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.row-desc {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text-70);
+  transition: grid-template-rows 0.3s ease, opacity 0.3s ease, transform 0.2s;
+}
+
+.row-desc > span {
+  overflow: hidden;
+  padding-top: 0;
+  transition: padding-top 0.3s ease;
+}
+
+.project-row:hover .row-desc,
+.project-row:focus-visible .row-desc {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  transform: translateX(8px);
+}
+
+.project-row:hover .row-desc > span,
+.project-row:focus-visible .row-desc > span { padding-top: 8px; }
+
+/* Touch devices can't hover — show descriptions by default */
+@media (hover: none) {
+  .row-desc { grid-template-rows: 1fr; opacity: 1; }
+  .row-desc > span { padding-top: 8px; }
+}
 
 .row-role,
 .row-duration {
