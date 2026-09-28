@@ -3,18 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brooklyn Museum — Data-fed App Experience</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <title>Brooklyn Museum Experiential App — Jillian Jackson</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=EB+Garamond:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/main.css" />
 </head>
 <body>
 
   <!-- TOP NAV -->
-  <nav class="top-nav">
+  <nav class="top-nav" aria-label="Primary">
     <a class="nav-logo" href="../index.html">Jillian Jackson</a>
     <ul class="nav-links">
-      <li><a href="../index.html#contact">Contact</a></li>
-      <li><a class="button" href="#" download>Download Resume</a></li>
+      <li><a href="../index.html#work">Projects</a></li>
+      <li><a href="#" download><!-- TODO: link resume file --> Resume</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../index.html">Home</a></li>
     </ul>
   </nav>
 
@@ -23,12 +26,11 @@
     <a class="sidebar-back" href="../index.html">&larr; Work</a>
     <ul class="sidebar-nav" id="sidebar-nav">
       <li><a href="#overview" class="active">Overview</a></li>
-      <li><a href="#solution">Solution</a></li>
-      <li><a href="#wireframes">Wireframes</a></li>
-      <li><a href="#prototype">Final Prototype</a></li>
-      <li><a href="#architecture">App Architecture</a></li>
-      <li><a href="#sketches">Sketches</a></li>
-      <li><a href="#screens">Screens</a></li>
+      <li><a href="#outcome">Final Outcome</a></li>
+      <li><a href="#discovery">Discovery &amp; Scope</a></li>
+      <li><a href="#research">Research &amp; Testing</a></li>
+      <li><a href="#design">Design &amp; Build</a></li>
+      <li><a href="#reflection">Reflection</a></li>
     </ul>
   </aside>
 
@@ -37,179 +39,139 @@
 
     <!-- PROJECT HEADER -->
     <div class="project-header" id="overview">
-      <p class="project-label">UX Design Sprint</p>
-      <h1 class="project-title">Brooklyn Museum — Data-fed App Experience</h1>
+      <p class="project-label">UI Design &middot; Experience Design &middot; 2025</p>
+      <h1 class="project-title">Brooklyn Museum Experiential App</h1>
       <p class="project-subtitle">
         Designing a mobile experience that complements the museum visit with real-time data on exhibits, wait times, and personalized guidance.
       </p>
 
       <div class="meta-grid">
         <div class="meta-col">
-          <label>Timeline</label>
-          <p><!-- TODO: add timeline --></p>
+          <label>Duration</label>
+          <p>4 weeks</p>
         </div>
         <div class="meta-col">
           <label>Role</label>
-          <p><!-- TODO: add role --></p>
+          <p>UI Designer, Experience Designer</p>
         </div>
         <div class="meta-col">
           <label>Team</label>
-          <p><!-- TODO: add collaborators --></p>
+          <p>Team of 2, with Tejas Garg</p>
         </div>
         <div class="meta-col">
-          <label>Tools</label>
-          <p><!-- TODO: add tools --></p>
+          <label>Context</label>
+          <p>Graduate studio project &middot; Mobile app</p>
         </div>
       </div>
-    </div>
-
-    <!-- HERO VISUAL -->
-    <div class="hero-visual">
-      <div class="img-block"><span>Hero visual — app screens / phone mockups</span></div>
     </div>
 
     <!-- OVERVIEW -->
     <section class="section">
       <h2 class="section-heading">Overview</h2>
+
+      <h3 class="section-subheading">The brief</h3>
       <p class="section-body">
-        We were tasked with the brief to pick a cultural institution and reimagine what a data-centered experience might be for an institution that does not traditionally use data visualization as a core part of their immersive experience.
+        Design a mobile experience for the Brooklyn Museum that enhances, but never interrupts, the act of viewing art. Real-time exhibit data, wait times, and personalized guidance, without pulling visitors' attention away from the work on the walls.
+      </p>
+
+      <h3 class="section-subheading">Goals</h3>
+      <ul class="section-list">
+        <li><strong>Complement, don't distract:</strong> build an immersive experience using data visualization that supports the museum visit rather than competing with it</li>
+        <li><strong>Explore alternative interfaces:</strong> look beyond the phone screen for what a visitor might actually need mid-visit</li>
+        <li><strong>Extend a strong existing system:</strong> work within the Brooklyn Museum's established design language rather than designing from scratch</li>
+      </ul>
+    </section>
+
+    <!-- FINAL OUTCOME -->
+    <section class="section" id="outcome">
+      <h2 class="section-heading">Final Outcome</h2>
+      <p class="section-lead">
+        A mobile experience unifying ticketing, exhibit exploration, wayfinding, and progress tracking, designed to sit quietly alongside the museum visit rather than compete with it.
+      </p>
+      <video class="case-img case-img-narrow hover-video" src="../assets/images/BROOKLYNMUSEUM/Brooklyn%20Museum%20Thumbnail.mp4#t=0.1" muted loop playsinline preload="metadata"></video>
+
+      <h3 class="section-subheading">At a glance</h3>
+      <div class="media-row">
+        <figure style="--ar: 0.48">
+          <video class="case-img hover-video" src="../assets/images/BROOKLYNMUSEUM/HOMESCREENDEMO.mp4#t=0.1" muted loop playsinline preload="metadata"></video>
+          <figcaption class="media-caption"><strong>Home page flow</strong> that translates the Brooklyn Museum's existing design system into a native app experience</figcaption>
+        </figure>
+        <figure style="--ar: 0.49">
+          <video class="case-img hover-video" src="../assets/images/BROOKLYNMUSEUM/ITENERARYDEMO.mp4#t=0.1" muted loop playsinline preload="metadata"></video>
+          <figcaption class="media-caption"><strong>Itinerary view</strong> surfacing real-time data metrics (wait times, popular periods, time budgeting) alongside the visitor's planned exhibits</figcaption>
+        </figure>
+        <figure style="--ar: 0.49">
+          <video class="case-img hover-video" src="../assets/images/BROOKLYNMUSEUM/CAPACITYFLOW.mp4#t=0.1" muted loop playsinline preload="metadata"></video>
+          <figcaption class="media-caption"><strong>Capacity visualization</strong> showing live occupancy by wing, so visitors can see where it's busy before they walk in</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- DISCOVERY + SCOPE -->
+    <section class="section" id="discovery">
+      <h2 class="section-heading">Discovery &amp; Scope</h2>
+
+      <h3 class="section-subheading">Key data points we identified as valuable to a visitor</h3>
+      <ul class="section-list">
+        <li><strong>Live occupancy:</strong> real-time guest count by wing</li>
+        <li><strong>Wait times:</strong> estimated wait for popular exhibits</li>
+        <li><strong>Progress tracking:</strong> mark completed exhibits, see what's left</li>
+        <li><strong>Popular times:</strong> historical data on busy periods</li>
+        <li><strong>Time budgeting:</strong> visitor sets how long they want to spend; app paces the visit accordingly</li>
+      </ul>
+
+      <h3 class="section-subheading">Scope decision</h3>
+      <p class="section-body">
+        Mobile app as the sole surface: full ticketing, exhibit exploration, wayfinding, and experience tracking. This is where planning happens before the visit and reflection happens after.
       </p>
     </section>
 
-    <!-- SOLUTION -->
-    <section class="section" id="solution">
-      <h2 class="section-heading">The Solution</h2>
+    <!-- RESEARCH + TESTING -->
+    <section class="section" id="research">
+      <h2 class="section-heading">Research &amp; Testing</h2>
+
+      <h3 class="section-subheading">Sketches</h3>
       <p class="section-body">
-        Our goal was to enable museum goers and visitors to make the most of their time at the Brooklyn Museum. We identified several key features we felt would be valuable and welcomed in this design context.
+        Rapid sketching to explore multiple directions at once (navigation patterns, icon states, calendar views) before committing to any one approach.
       </p>
 
-      <div class="tag-row">
-        <span class="tag">Ticket Purchase Flow</span>
-        <a class="tag-link" href="#"><!-- TODO: link --> Live analysis of the museum data report</a>
-      </div>
-    </section>
-
-    <!-- WIREFRAMES -->
-    <section class="section" id="wireframes">
-      <p class="section-label">Wireframes</p>
+      <h3 class="section-subheading">Wireframes</h3>
       <p class="section-body">
-        Wireframes were built to solidify the user flows and overall app structure.
+        Used to establish information architecture and user flows ahead of visual design, so the structure was validated before we invested in polish.
       </p>
-      <div class="img-block img-full"><span>Wireframe flow — user flow / app structure diagram</span></div>
+      <img class="case-img" src="../assets/images/BROOKLYNMUSEUM/SKETCHESANDWIREFRAMES.png" alt="Sketches and wireframes for the Brooklyn Museum app" loading="lazy" />
     </section>
 
-    <!-- FINAL PROTOTYPE -->
-    <section class="section" id="prototype">
-      <h2 class="section-heading">Final Prototype</h2>
+    <!-- DESIGN + BUILD -->
+    <section class="section" id="design">
+      <h2 class="section-heading">Design &amp; Build</h2>
 
-      <div class="feature-list">
-        <div class="feature-item">
-          <div class="feature-text">
-            <h3>Ticket Purchase Flow</h3>
-            <p>Call out a feature, benefit, or value of your story, then link to a page where people can learn more about it.</p>
-          </div>
-          <div class="img-block phone"><span>Ticket purchase screen</span></div>
-        </div>
-
-        <div class="feature-item reverse">
-          <div class="feature-text">
-            <h3>Exhibit Capacity Data Visualization</h3>
-            <p>Call out a feature, benefit, or value of your story, then link to a page where people can learn more about it.</p>
-          </div>
-          <div class="img-block phone"><span>Exhibit capacity screen</span></div>
-        </div>
-
-        <div class="feature-item">
-          <div class="feature-text">
-            <h3>Itinerary Selection Feature</h3>
-            <p>Call out a feature, benefit, or value of your story, then link to a page where people can learn more about it.</p>
-          </div>
-          <div class="img-block phone"><span>Checkout / itinerary screen</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- APP ARCHITECTURE -->
-    <section class="section" id="architecture">
-      <h2 class="section-heading">App Architecture</h2>
+      <h3 class="section-subheading">Design system</h3>
       <p class="section-body">
-        We drafted a systematic architecture map of what the system and its features might entail, considering what would be intuitive as a user's journey through the Brooklyn Museum.
+        Rather than building a new visual identity, we extended the Brooklyn Museum's own, anchored by their custom typeface, BKM Facade (Other Means Studio), and its bold graphic language.
       </p>
-      <div class="img-block img-full"><span>App architecture diagram — sitemap / flow map</span></div>
+      <ul class="section-list">
+        <li><strong>Typography:</strong> BKM Facade for headlines, with a clear hierarchy from 32px headings down to 16px captions</li>
+        <li><strong>Color:</strong> the museum's existing palette, adapted for the mobile interface</li>
+      </ul>
+      <img class="case-img" src="../assets/images/BROOKLYNMUSEUM/WWEBTOMOBILE.png" alt="The Brooklyn Museum website on a laptop, with an arrow pointing to a blank phone: translating web to mobile" loading="lazy" />
     </section>
 
-    <section class="section">
-      <h2 class="section-heading">App Architecture</h2>
+    <!-- REFLECTION -->
+    <section class="section" id="reflection">
+      <h2 class="section-heading">Reflection</h2>
+
+      <h3 class="section-subheading">Contributions</h3>
+      <ul class="section-list">
+        <li><strong>To the field:</strong> a new way of interacting with museum spaces, drawing visitors deeper into exhibits through exploration rather than instruction</li>
+        <li><strong>To ourselves:</strong> real practice in extending and adapting an existing design system to new interactive scenarios, rather than designing in a vacuum</li>
+        <li><strong>To society:</strong> a model for immersion that spans digital and physical space: visitors can appreciate art physically while being guided by non-distracting digital support</li>
+      </ul>
+
+      <h3 class="section-subheading">What I took from this</h3>
       <p class="section-body">
-        We drafted a systematic architecture map of what the system and its features might entail, considering what would be intuitive as a user's journey through the Brooklyn Museum.
+        This project pushed me to think carefully about when technology should step forward and when it should recede. Working within an existing design system, rather than creating one from scratch, was valuable practice in its own right: most real-world product work means extending what already exists, not starting from zero. The Brooklyn Museum's brand is already strong. Our job was to make it work in new contexts, and to know when to get out of the way.
       </p>
-      <div class="img-half-row">
-        <div class="img-block img-half"><span>Process / concept screen</span></div>
-        <div class="img-block img-half"><span>Data visualization screen</span></div>
-      </div>
-    </section>
-
-    <!-- SKETCHES -->
-    <section class="section" id="sketches">
-      <h2 class="section-heading">Sketches</h2>
-      <p class="section-body">
-        After mapping out our content, we brainstormed what mediums of data visualization would be most appropriate for the type of data and metrics of collection. Ideas included bubble charts, progress trackers, and status indicators.
-      </p>
-      <div class="img-grid">
-        <div class="img-block"><span>Sketch 1</span></div>
-        <div class="img-block"><span>Sketch 2</span></div>
-        <div class="img-block"><span>Sketch 3</span></div>
-        <div class="img-block"><span>Sketch 4</span></div>
-        <div class="img-block"><span>Sketch 5</span></div>
-        <div class="img-block"><span>Sketch 6</span></div>
-        <div class="img-block"><span>Sketch 7</span></div>
-        <div class="img-block"><span>Sketch 8</span></div>
-      </div>
-    </section>
-
-    <!-- FINAL SCREENS -->
-    <section class="section" id="screens">
-      <h2 class="section-heading">Final Screens</h2>
-
-      <div class="screen-row">
-        <p class="screen-row-label">Ticket Purchase Flow</p>
-        <div class="screen-row-track">
-          <div class="img-block phone small"><span>Screen</span></div>
-          <div class="img-block phone small"><span>Screen</span></div>
-          <div class="img-block phone small"><span>Screen</span></div>
-          <div class="img-block phone small"><span>Screen</span></div>
-        </div>
-      </div>
-
-      <div class="screen-row">
-        <p class="screen-row-label">Select Your Ticket Type</p>
-        <div class="screen-row-track">
-          <div class="img-block phone small"><span>Screen</span></div>
-          <div class="img-block phone small"><span>Screen</span></div>
-          <div class="img-block phone small"><span>Screen</span></div>
-          <div class="img-block phone small"><span>Screen</span></div>
-        </div>
-      </div>
-
-      <div class="screen-row">
-        <p class="screen-row-label">Build Your Itinerary</p>
-        <div class="screen-row-track">
-          <div class="img-block phone small"><span>Screen</span></div>
-          <div class="img-block phone small"><span>Screen</span></div>
-          <div class="img-block phone small"><span>Screen</span></div>
-          <div class="img-block phone small"><span>Screen</span></div>
-        </div>
-      </div>
-
-      <div class="screen-row">
-        <p class="screen-row-label">Check Out</p>
-        <div class="screen-row-track">
-          <div class="img-block phone small"><span>Screen</span></div>
-          <div class="img-block phone small"><span>Screen</span></div>
-          <div class="img-block phone small"><span>Screen</span></div>
-          <div class="img-block phone small"><span>Screen</span></div>
-        </div>
-      </div>
 
       <div class="cta-block">
         <h3>Want to dig deeper?</h3>
@@ -223,7 +185,7 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-bottom">
-      <p class="footer-credit">&copy; Jillian Jackson</p>
+      <p class="footer-credit">&copy; 2026 Jillian Jackson</p>
       <ul class="footer-links">
         <li><a href="#">LinkedIn</a></li>
         <li><a href="#">Resume</a></li>
@@ -232,5 +194,6 @@
   </footer>
 
   <script src="../assets/js/scrollspy.js"></script>
+  <script src="../assets/js/hover-video.js"></script>
 </body>
 </html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tap to Map — Jillian Jackson</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=EB+Garamond:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/main.css" />
+</head>
+<body>
+
+  <!-- TOP NAV -->
+  <nav class="top-nav" aria-label="Primary">
+    <a class="nav-logo" href="../index.html">Jillian Jackson</a>
+    <ul class="nav-links">
+      <li><a href="../index.html#work">Projects</a></li>
+      <li><a href="#" download><!-- TODO: link resume file --> Resume</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../index.html">Home</a></li>
+    </ul>
+  </nav>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <a class="sidebar-back" href="../index.html">&larr; Work</a>
+    <ul class="sidebar-nav" id="sidebar-nav">
+      <li><a href="#overview" class="active">Overview</a></li>
+      <li><a href="#prototype">Final Prototype</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#technical" class="sub">Technical</a></li>
+      <li><a href="#secondary" class="sub">Secondary</a></li>
+      <li><a href="#synthesis">Synthesis</a></li>
+      <li><a href="#fabrication">3D Prints</a></li>
+      <li><a href="#reflection">Reflection</a></li>
+    </ul>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+
+    <!-- PROJECT HEADER -->
+    <div class="project-header" id="overview">
+      <p class="project-label">Design Fabrication</p>
+      <h1 class="project-title">Tap to Map</h1>
+      <p class="project-subtitle">
+        Multi-sensory wayfinding for visually impaired occupants during tornado shelter events.
+      </p>
+
+      <div class="meta-grid">
+        <div class="meta-col">
+          <label>Timeline</label>
+          <p>5 weeks</p>
+        </div>
+        <div class="meta-col">
+          <label>Role</label>
+          <p>3D-printed tag fabrication, with Tejas: designing and producing the physical NFC housings that make up the tap points</p>
+        </div>
+        <div class="meta-col">
+          <label>Team</label>
+          <p>Andrew Pandji, April Jung, Ashley Xiang, Jillian Jackson, Tejas Garg</p>
+        </div>
+        <div class="meta-col">
+          <label>Context</label>
+          <p><!-- TODO: add course name --> Sam Fox School, WashU</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- OVERVIEW -->
+    <section class="section">
+      <h2 class="section-heading">Overview</h2>
+
+      <h3 class="section-subheading">The problem</h3>
+      <p class="section-body">
+        Standard emergency evacuation maps, the kind posted in stairwells, are flat, text-heavy, and hard to locate. Even sighted occupants can find them slow to parse under stress; for blind and low-vision occupants, they're effectively unusable.
+      </p>
+
+      <h3 class="section-subheading">The prompt</h3>
+      <p class="section-lead">How might we design accessible tools to help blind and low-vision individuals learn emergency evacuation routes?</p>
+      <h3 class="section-subheading">The response</h3>
+      <p class="section-body">
+        Tap to Map: a system of 3D-printed, braille-labeled NFC tags placed at key decision points along an evacuation route (refuge areas, turns, landmarks), paired with a companion app that reads turn-by-turn instructions aloud when a tag is tapped.
+      </p>
+
+      <h3 class="section-subheading">Where we built it</h3>
+      <p class="section-body">
+        Weil Hall, using its existing tornado/severe-weather shelter protocol as the real-world test case.
+      </p>
+
+      <h3 class="section-subheading">Team breakdown</h3>
+      <ul class="section-list">
+        <li><strong>Pandji + April:</strong> app design (Bluetooth beacon proximity, NFC scanning, text-to-speech)</li>
+        <li><strong>Ashley:</strong> route analysis and NFC content (writing the turn-by-turn audio scripts)</li>
+        <li><strong>Jillian + Tejas (my section):</strong> 3D-printed tag design and fabrication</li>
+      </ul>
+    </section>
+
+    <!-- FINAL PROTOTYPE -->
+    <section class="section" id="prototype">
+      <h2 class="section-heading">Final Prototype</h2>
+      <p class="section-body">
+        A set of orange, braille-labeled &ldquo;TAP&rdquo; discs mounted at decision points along a real evacuation route in Weil Hall (at an exterior entrance, near an elevator bank, and at the severe-weather refuge area), each triggering a short spoken instruction when tapped with a phone.
+      </p>
+      <!-- hover-video-group: hovering either video plays both together -->
+      <!-- --ar = width / height of each video, so both render at equal height -->
+      <div class="media-row hover-video-group">
+        <video class="case-img hover-video" style="--ar: 1.84" src="../assets/images/TAP2MAP/VisionDemo.mp4#t=0.1" muted loop playsinline preload="metadata"></video>
+        <video class="case-img hover-video" style="--ar: 0.46" src="../assets/images/TAP2MAP/PhoneDemo.mp4#t=0.1" muted loop playsinline preload="metadata"></video>
+      </div>
+
+      <h3 class="section-subheading">What it does, end to end</h3>
+      <ol class="section-list numbered">
+        <li>Occupant feels along the wall and finds a raised, brightly colored disc marked &ldquo;TAP&rdquo; (both visually and in braille)</li>
+        <li>They tap it with their phone (NFC)</li>
+        <li>The app reads a short instruction aloud, e.g., <em>&ldquo;the bathroom is an area of refuge, keep walking until you reach the exit door&rdquo;</em></li>
+        <li>They continue to the next tap point, repeating until they reach shelter</li>
+      </ol>
+
+      <h3 class="section-subheading">Why this approach</h3>
+      <p class="section-body">
+        Rather than trying to replicate a full map audibly (high cognitive load, easy to lose track of), the route is broken into small, sequential chunks: only as much information as is needed for the next few steps.
+      </p>
+    </section>
+
+    <!-- RESEARCH -->
+    <section class="section" id="research">
+      <h2 class="section-heading">Research</h2>
+
+      <div id="technical">
+        <h3 class="section-subheading">Technical research</h3>
+        <p class="section-body">We looked into why GPS-based wayfinding doesn't work indoors:</p>
+        <ul class="section-list">
+          <li>Satellite signal blockage from buildings, bridges, and trees</li>
+          <li>Degraded accuracy indoors or underground</li>
+          <li>Signal &ldquo;multipath&rdquo;: reflections off walls and buildings that confuse positioning</li>
+          <li>Confirmed by comparing two location apps' logged paths in the same building: both showed noisy, inconsistent tracking indoors</li>
+        </ul>
+        <p class="section-body">
+          This ruled out relying on GPS alone and pointed us toward tap-based, tag-anchored positioning (NFC) instead of continuous location tracking.
+        </p>
+        <img class="case-img" src="../assets/images/TAP2MAP/Group%2018.png" alt="FigJam research board: Weil Hall evacuation map, route mapping, and problem statement" loading="lazy" />
+      </div>
+
+      <div id="secondary">
+        <h3 class="section-subheading">Secondary research</h3>
+        <ul class="section-list">
+          <li><strong>Existing accessibility tools:</strong> tactile/braille maps (e.g., a tactile evacuation plan sign combining raised lettering, pictograms, and braille) show real demand for physical, touchable wayfinding, but they're static and can't give turn-by-turn guidance</li>
+          <li><strong>Existing evacuation apps:</strong> we reviewed several (e.g., WPS Evac) and found they're designed entirely around sighted use: visual floor plans, tap-to-view maps, no audio or tactile affordances</li>
+          <li><strong>Lived experience:</strong> <a class="inline-link" href="https://www.youtube.com/@TommyEdisonXP" target="_blank" rel="noopener">Tommy Edison</a> described having to feel along walls for a sign in unfamiliar spaces when no one is available to help; Molly Burke described tactile maps as something that let her orient immediately and said she wanted them &ldquo;everywhere&rdquo;</li>
+          <li><strong>Standard protocol:</strong> FEMA/Red Cross guidance on evacuation for people with disabilities recommends learning at least one alternate route in advance and practicing it twice a year with an &ldquo;Exit Buddy.&rdquo; This assumes advance learning is possible, which current tools don't really support</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SYNTHESIS -->
+    <section class="section" id="synthesis">
+      <h2 class="section-heading">Insight Synthesis</h2>
+      <p class="section-body">
+        Reviewing Weil Hall's existing evacuation map surfaced three concrete accessibility gaps, which became our design requirements.
+      </p>
+      <img class="case-img case-img-narrow" src="../assets/images/TAP2MAP/MapFigJam.png" alt="Weil Hall's posted evacuation map, annotated: how do we make this accessible, interactive, relevant, timely" loading="lazy" />
+
+      <table class="case-table">
+        <thead>
+          <tr>
+            <th>Gap in existing map</th>
+            <th>Design requirement for Tap to Map</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Posted in the exit stairway, so hard to find</td>
+            <td>Bright, tactile, distinctly shaped physical marker at each point</td>
+          </tr>
+          <tr>
+            <td>High cognitive load to parse under stress, even for sighted users</td>
+            <td>Break the route into small sequential audio chunks instead of one full map</td>
+          </tr>
+          <tr>
+            <td>Flat page, no tactile cues at all</td>
+            <td>Physical, touchable tag with braille + raised text as the primary interface</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="section-body">
+        This translated into the system's two core technical bets: NFC (not GPS) for reliable indoor positioning, and short chunked audio (not a full spoken map) to keep cognitive load low under stress.
+      </p>
+    </section>
+
+    <!-- PROTOTYPING & FABRICATION -->
+    <section class="section" id="fabrication">
+      <h2 class="section-heading">Prototyping &amp; Fabrication</h2>
+      <p class="section-body">
+        With the route mapped and audio scripts written, Tejas and I were responsible for turning &ldquo;a tap point&rdquo; into an actual physical object that could be installed in a building.
+      </p>
+      <img class="case-img" src="../assets/images/TAP2MAP/3DFabrication.png" alt="3D-printed NFC tag fabrication" loading="lazy" />
+
+      <h3 class="section-subheading">What that involved</h3>
+      <ul class="section-list">
+        <li><strong>3D design</strong> of the tag housing, sized to encase an NFC chip while staying thin and durable enough to mount on drywall, brick, or a metal pillar</li>
+        <li><strong>NFC compatibility testing:</strong> measuring chip dimensions and testing housing thickness to make sure the tag still read reliably once encased (NFC range degrades quickly with added material)</li>
+        <li><strong>Braille + raised lettering integration:</strong> designing the &ldquo;TAP&rdquo; label and braille dots directly into the print so they're legible by touch, not applied as a separate sticker</li>
+        <li><strong>Fabrication:</strong> printing and iterating on the housing <!-- TODO: add where it was printed + material/settings specifics --></li>
+        <li><strong>Installation:</strong> mounting tags at the points Ashley had identified, in both indoor (drywall, near elevators) and outdoor (brick pillar) conditions</li>
+      </ul>
+
+      <img class="case-img" src="../assets/images/TAP2MAP/InTheWild.jpg" alt="Tap to Map tag installed in Weil Hall" loading="lazy" />
+      <img class="case-img" src="../assets/images/TAP2MAP/TeamPhoto.png" alt="The Tap to Map team" loading="lazy" />
+    </section>
+
+    <!-- REFLECTION -->
+    <section class="section" id="reflection">
+      <h2 class="section-heading">Reflection</h2>
+      <p class="section-body todo">Reflection coming soon.</p>
+
+      <div class="cta-block">
+        <h3>Want to dig deeper?</h3>
+        <p>Happy to walk through the fabrication process, the prototype, or the decisions I didn't have room for here.</p>
+        <a class="cta-link" href="mailto:j.jillian@wustl.edu">Get in touch</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-bottom">
+      <p class="footer-credit">&copy; 2026 Jillian Jackson</p>
+      <ul class="footer-links">
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Resume</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="../assets/js/scrollspy.js"></script>
+  <script src="../assets/js/hover-video.js"></script>
+</body>
+</html>

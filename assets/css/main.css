@@ -211,6 +211,14 @@ a { color: inherit; }
   background: var(--accent);
 }
 
+/* Nested sub-section link (e.g. Research → Quant / Qual) */
+.sidebar-nav a.sub {
+  padding-left: 26px;
+  font-size: 12px;
+}
+
+.sidebar-nav a.sub::before { left: 12px; }
+
 /* ── MAIN ── */
 .main {
   margin-left: var(--sidebar-w);
@@ -234,9 +242,10 @@ a { color: inherit; }
 }
 
 .project-title {
-  font-size: 34px;
+  font-family: var(--font-serif);
+  font-size: 46px;
   font-weight: 600;
-  line-height: 1.25;
+  line-height: 1.12;
   letter-spacing: -0.01em;
   margin-bottom: 20px;
 }
@@ -299,12 +308,16 @@ a { color: inherit; }
   margin-bottom: 14px;
 }
 
+/* Heading hierarchy: H1 .project-title (serif 46) →
+   H2 .section-heading (serif 34) → H3 .section-subheading (serif 22)
+   → small sans .section-label for minor groupings. Body stays sans. */
 .section-heading {
-  font-size: 24px;
+  font-family: var(--font-serif);
+  font-size: 34px;
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.2;
   max-width: 640px;
-  margin-bottom: 18px;
+  margin-bottom: 24px;
 }
 
 .section-body {
@@ -319,6 +332,191 @@ a { color: inherit; }
   color: var(--text-35);
   font-style: italic;
 }
+
+.section-subheading {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 40px 0 10px;
+}
+
+/* No extra gap when a subheading opens the section */
+.section-heading + .section-subheading,
+.section-heading + div > .section-subheading:first-child { margin-top: 0; }
+
+/* Larger intro line, e.g. the research question */
+.section-lead {
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--text);
+  max-width: 640px;
+  margin-bottom: 16px;
+}
+
+.section-body + .section-label { margin-top: 32px; }
+.section-label + .stat-grid { margin-top: 0; }
+
+.section-list {
+  list-style: none;
+  max-width: 640px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section-list li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--text-70);
+}
+
+.section-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.8em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--text-35);
+}
+
+.section-list strong,
+.section-body strong { color: var(--text); font-weight: 600; }
+
+/* Numbered variant — serif numerals in place of dots */
+.section-list.numbered { counter-reset: step; }
+
+.section-list.numbered li { padding-left: 28px; counter-increment: step; }
+
+.section-list.numbered li::before {
+  content: counter(step);
+  top: 0;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background: none;
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.inline-link {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ── COMPARISON TABLE ── */
+.case-table {
+  width: 100%;
+  max-width: 900px;
+  border-collapse: collapse;
+  margin: 32px 0 24px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.case-table th {
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-35);
+  padding: 0 24px 12px 0;
+  border-bottom: 1px solid var(--border-strong);
+}
+
+.case-table td {
+  vertical-align: top;
+  color: var(--text-70);
+  padding: 16px 24px 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.case-table td:last-child { color: var(--text); }
+
+/* ── STAT GRID (headline numbers) ── */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.stat {
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.stat-num {
+  font-family: var(--font-serif);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--text);
+}
+
+.stat-label {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-55);
+  margin-top: 8px;
+}
+
+@media (max-width: 720px) {
+  .stat-grid { grid-template-columns: 1fr; }
+}
+
+/* Real exported image — drop-in replacement for .img-block.img-full.
+   No border/radius: artifacts sit directly on the page. */
+.case-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 32px;
+}
+
+/* Small source images — show at native size, don't upscale */
+.case-img-narrow { max-width: 440px; }
+
+/* Side-by-side media: the row supplies the top margin */
+.img-half-row { align-items: start; }
+.img-half-row .case-img { margin-top: 0; }
+
+/* Equal-height media row for mixed shapes (e.g. landscape + phone).
+   Each child sets --ar (width / height); widths grow in proportion,
+   so every item lands at the same height. */
+.media-row {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.media-row > * {
+  flex: var(--ar, 1) 1 0;
+  min-width: 0;
+  margin-top: 0;
+}
+
+.media-row .case-img { margin-top: 0; }
+
+.media-caption {
+  font-family: var(--font-meta);
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-55);
+  margin-top: 14px;
+}
+
+.media-caption strong { color: var(--text); font-weight: 600; }
 
 /* ── IMAGE LAYOUT HELPERS ── */
 .img-full { width: 100%; height: 440px; margin-top: 32px; }
@@ -779,6 +977,15 @@ footer {
   width: 100%;
   height: 620px;
 }
+
+/* Real image/video — no box, sits directly on the page */
+.shallow-media {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.shallow-caption:empty { display: none; }
 
 .shallow-caption {
   font-family: var(--font-meta);
