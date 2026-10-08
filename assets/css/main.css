@@ -5,6 +5,64 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* ── IVORY (Lineto, trial) ──
+   Font files are gitignored (trial license = testing only), so the
+   live site falls back to EB Garamond via --font-serif until a web
+   license is purchased.
+   - Medium covers 500–600, so semibold (600) headings render Medium.
+   - unicode-range lists only the trial's real glyphs. The trial swaps a
+     placeholder in for most punctuation (: ; ! ? ( ) " & – — etc.), so
+     those characters fall through to EB Garamond instead. Drop the
+     unicode-range lines once the full (licensed) font is in place. */
+@font-face {
+  font-family: 'Ivory';
+  src: url('../fonts/IvoryTrial-Light.otf') format('opentype');
+  font-weight: 300; font-style: normal; font-display: swap;
+  unicode-range: U+0020, U+002C-0039, U+0041-005A, U+0061-007A, U+00A0, U+00AA, U+00AD, U+00B2-00B3, U+00B6-00B7, U+00B9-00BA, U+00BC-00BE, U+00C0-00C5, U+00C7-00CF, U+00D1-00D6, U+00D9-00DD, U+00E0-00E5, U+00E7-00EF, U+00F1-00F6, U+00F9-00FD, U+00FF, U+0160-0161, U+0178, U+017D-017E, U+2019, U+2026, U+2122, U+2219, U+FB01-FB02;
+}
+@font-face {
+  font-family: 'Ivory';
+  src: url('../fonts/IvoryTrial-LightItalic.otf') format('opentype');
+  font-weight: 300; font-style: italic; font-display: swap;
+  unicode-range: U+0020, U+002C-0039, U+0041-005A, U+0061-007A, U+00A0, U+00AA, U+00AD, U+00B2-00B3, U+00B6-00B7, U+00B9-00BA, U+00BC-00BE, U+00C0-00C5, U+00C7-00CF, U+00D1-00D6, U+00D9-00DD, U+00E0-00E5, U+00E7-00EF, U+00F1-00F6, U+00F9-00FD, U+00FF, U+0160-0161, U+0178, U+017D-017E, U+2019, U+2026, U+2122, U+2219, U+FB01-FB02;
+}
+@font-face {
+  font-family: 'Ivory';
+  src: url('../fonts/IvoryTrial-Regular.otf') format('opentype');
+  font-weight: 400; font-style: normal; font-display: swap;
+  unicode-range: U+0020, U+002C-0039, U+0041-005A, U+0061-007A, U+00A0, U+00AA, U+00AD, U+00B2-00B3, U+00B6-00B7, U+00B9-00BA, U+00BC-00BE, U+00C0-00C5, U+00C7-00CF, U+00D1-00D6, U+00D9-00DD, U+00E0-00E5, U+00E7-00EF, U+00F1-00F6, U+00F9-00FD, U+00FF, U+0160-0161, U+0178, U+017D-017E, U+2019, U+2026, U+2122, U+2219, U+FB01-FB02;
+}
+@font-face {
+  font-family: 'Ivory';
+  src: url('../fonts/IvoryTrial-Italic.otf') format('opentype');
+  font-weight: 400; font-style: italic; font-display: swap;
+  unicode-range: U+0020, U+002C-0039, U+0041-005A, U+0061-007A, U+00A0, U+00AA, U+00AD, U+00B2-00B3, U+00B6-00B7, U+00B9-00BA, U+00BC-00BE, U+00C0-00C5, U+00C7-00CF, U+00D1-00D6, U+00D9-00DD, U+00E0-00E5, U+00E7-00EF, U+00F1-00F6, U+00F9-00FD, U+00FF, U+0160-0161, U+0178, U+017D-017E, U+2019, U+2026, U+2122, U+2219, U+FB01-FB02;
+}
+@font-face {
+  font-family: 'Ivory';
+  src: url('../fonts/IvoryTrial-Medium.otf') format('opentype');
+  font-weight: 500 600; font-style: normal; font-display: swap;
+  unicode-range: U+0020, U+002C-0039, U+0041-005A, U+0061-007A, U+00A0, U+00AA, U+00AD, U+00B2-00B3, U+00B6-00B7, U+00B9-00BA, U+00BC-00BE, U+00C0-00C5, U+00C7-00CF, U+00D1-00D6, U+00D9-00DD, U+00E0-00E5, U+00E7-00EF, U+00F1-00F6, U+00F9-00FD, U+00FF, U+0160-0161, U+0178, U+017D-017E, U+2019, U+2026, U+2122, U+2219, U+FB01-FB02;
+}
+@font-face {
+  font-family: 'Ivory';
+  src: url('../fonts/IvoryTrial-MediumItalic.otf') format('opentype');
+  font-weight: 500 600; font-style: italic; font-display: swap;
+  unicode-range: U+0020, U+002C-0039, U+0041-005A, U+0061-007A, U+00A0, U+00AA, U+00AD, U+00B2-00B3, U+00B6-00B7, U+00B9-00BA, U+00BC-00BE, U+00C0-00C5, U+00C7-00CF, U+00D1-00D6, U+00D9-00DD, U+00E0-00E5, U+00E7-00EF, U+00F1-00F6, U+00F9-00FD, U+00FF, U+0160-0161, U+0178, U+017D-017E, U+2019, U+2026, U+2122, U+2219, U+FB01-FB02;
+}
+@font-face {
+  font-family: 'Ivory';
+  src: url('../fonts/IvoryTrial-Bold.otf') format('opentype');
+  font-weight: 700; font-style: normal; font-display: swap;
+  unicode-range: U+0020, U+002C-0039, U+0041-005A, U+0061-007A, U+00A0, U+00AA, U+00AD, U+00B2-00B3, U+00B6-00B7, U+00B9-00BA, U+00BC-00BE, U+00C0-00C5, U+00C7-00CF, U+00D1-00D6, U+00D9-00DD, U+00E0-00E5, U+00E7-00EF, U+00F1-00F6, U+00F9-00FD, U+00FF, U+0160-0161, U+0178, U+017D-017E, U+2019, U+2026, U+2122, U+2219, U+FB01-FB02;
+}
+@font-face {
+  font-family: 'Ivory';
+  src: url('../fonts/IvoryTrial-BoldItalic.otf') format('opentype');
+  font-weight: 700; font-style: italic; font-display: swap;
+  unicode-range: U+0020, U+002C-0039, U+0041-005A, U+0061-007A, U+00A0, U+00AA, U+00AD, U+00B2-00B3, U+00B6-00B7, U+00B9-00BA, U+00BC-00BE, U+00C0-00C5, U+00C7-00CF, U+00D1-00D6, U+00D9-00DD, U+00E0-00E5, U+00E7-00EF, U+00F1-00F6, U+00F9-00FD, U+00FF, U+0160-0161, U+0178, U+017D-017E, U+2019, U+2026, U+2122, U+2219, U+FB01-FB02;
+}
+
 :root {
   --bg: #f4f5f7;
   --surface: #eaebef;
@@ -22,14 +80,13 @@
   --accent: #9747ff; /* Figma component-layer purple — use sparingly */
   --accent-10: rgba(151, 71, 255, 0.1);
 
-  --cream: #fdfce6;
   --yellow: #fff48d;
 
   --sidebar-w: 200px;
   --nav-h: 64px;
 
   --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-serif: 'EB Garamond', Georgia, serif;
+  --font-serif: 'Ivory', 'EB Garamond', Georgia, serif;
   --font-meta: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
 }
@@ -105,11 +162,48 @@ a { color: inherit; }
 }
 
 .nav-logo {
-  font-size: 14px;
+  font-family: var(--font-serif);
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.01em;
   text-decoration: none;
   color: var(--text);
+}
+
+/* ── JJ LOGO ──
+   Collapsed to "JJ"; on hover/focus the rest of each name slides out
+   to read "Jillian Jackson". Each .logo-rest is an inline grid whose
+   single column animates 0fr → 1fr, so it grows to the text's natural
+   width with no hard-coded max-width. */
+.logo-jj {
+  white-space: nowrap;
+  text-transform: lowercase; /* "jj" → "jillian jackson" */
+}
+
+.logo-rest {
+  display: inline-grid;
+  grid-template-columns: 0fr;
+  vertical-align: baseline;
+  opacity: 0;
+  transition: grid-template-columns 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.3s ease;
+}
+
+/* clip, not hidden: hidden makes this a scroll container, which moves
+   the baseline to the box bottom and knocks the letters off the J's line */
+.logo-rest > span {
+  min-width: 0;
+  overflow: clip;
+}
+
+.logo-jj:hover .logo-rest,
+.logo-jj:focus-visible .logo-rest {
+  grid-template-columns: 1fr;
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-rest { transition: none; }
 }
 
 .nav-links {
@@ -120,7 +214,8 @@ a { color: inherit; }
 }
 
 .nav-links a {
-  font-size: 13px;
+  font-family: var(--font-serif);
+  font-size: 15px;
   font-weight: 500;
   text-decoration: none;
   color: var(--text-55);
@@ -673,7 +768,8 @@ footer {
 }
 
 .footer-links a {
-  font-size: 12px;
+  font-family: var(--font-serif);
+  font-size: 14px;
   font-weight: 600;
   text-decoration: none;
   color: var(--text-55);
@@ -693,9 +789,9 @@ footer {
 }
 
 .landing-nav .nav-logo {
-  font-family: var(--font);
+  font-family: var(--font-serif);
   font-weight: 700;
-  font-size: 16px;
+  font-size: 18px;
   letter-spacing: -0.01em;
   color: var(--text);
   text-decoration: none;
@@ -709,8 +805,8 @@ footer {
 }
 
 .landing-nav .nav-links a {
-  font-family: var(--font);
-  font-size: 14px;
+  font-family: var(--font-serif);
+  font-size: 16px;
   font-weight: 500;
   color: var(--text);
   text-decoration: none;
@@ -732,7 +828,8 @@ footer {
 
 .landing-title {
   font-family: var(--font-serif);
-  font-weight: 700;
+  font-weight: 300;
+  font-style: italic;
   font-size: clamp(56px, 11vw, 168px);
   line-height: 0.92;
   letter-spacing: -0.01em;
@@ -743,7 +840,7 @@ footer {
 
 /* ── PROJECT LIST ── */
 .project-list {
-  background: var(--cream);
+  background: var(--bg); /* matches the case study pages */
 }
 
 .project-row {
@@ -830,7 +927,7 @@ footer {
   top: 50%;
   right: 64px;
   z-index: 2;
-  width: min(640px, 45vw); /* cap so it doesn't cover titles on narrower screens */
+  width: min(480px, 34vw); /* cap so it doesn't cover titles on narrower screens */
   height: auto;
   border-radius: 8px;
   opacity: 0;
@@ -844,6 +941,24 @@ footer {
   opacity: 1;
   transform: translate(0, -50%);
 }
+
+/* "Coming soon" label — stands in for the thumbnail on projects
+   without a case study yet; reuses .row-thumb positioning + motion */
+.row-soon {
+  width: auto;
+  white-space: nowrap;
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--text);
+  background: var(--accent);
+  border-radius: 999px;
+  padding: 12px 32px;
+}
+
+/* No case study to open yet */
+.project-row.is-soon { cursor: default; }
 
 /* No hover on touch — and no room on small screens */
 @media (hover: none), (max-width: 900px) {
@@ -1029,36 +1144,37 @@ footer {
   align-items: start;
 }
 
+/* Both columns pinned to row 1. The right column comes first in the
+   HTML, so without an explicit row, grid auto-placement pushes the
+   left column down to row 2 — below a full screen of empty space. */
 .about-right {
   position: sticky;
   top: 0;
   grid-column: 2;
+  grid-row: 1;
   height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--nav-h) 48px 48px;
+  /* Anchored bottom-right with no padding on those sides: the PNG's
+     stars are cropped at its right/bottom edges, so flush placement
+     makes them read as continuing off-screen. */
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: var(--nav-h) 0 0 48px;
   overflow: hidden;
 }
 
-.about-stars {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.about-star { position: absolute; filter: drop-shadow(0 2px 5px rgba(18, 19, 22, 0.15)); }
-
-.about-photo-wrap { position: relative; z-index: 1; width: 100%; }
-
-.about-photo {
-  width: 100%;
-  aspect-ratio: 4 / 3;
+/* Photo + stars as one transparent PNG — scale to fit the viewport height */
+.about-img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(100vh - var(--nav-h));
 }
 
 .about-left {
   grid-column: 1;
+  grid-row: 1;
   max-width: 620px;
   padding: calc(var(--nav-h) + 56px) 64px 120px 64px;
 }
@@ -1083,6 +1199,26 @@ footer {
   font-size: 13px;
   color: var(--text-55);
 }
+
+/* Email (copy-to-clipboard button) + LinkedIn link — styled as inline text */
+.copy-email,
+.about-link {
+  font: inherit;
+  color: var(--text);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: var(--text-35);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s;
+}
+
+.copy-email:hover,
+.about-link:hover { text-decoration-color: var(--text); }
+
+.copy-email.is-copied { text-decoration: none; }
 
 .about-divider {
   border: none;
@@ -1149,11 +1285,14 @@ footer {
   .about-right {
     position: static;
     grid-column: 1;
+    grid-row: auto; /* stacked: photo first, text below */
     height: auto;
-    padding: 48px 24px 0;
+    padding: 48px 0 0 24px; /* still flush to the right edge */
   }
+  .about-img { max-height: 70vh; }
   .about-left {
     grid-column: 1;
+    grid-row: auto;
     max-width: none;
     padding: 48px 24px 80px;
   }

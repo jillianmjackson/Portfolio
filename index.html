@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jillian Jackson</title>
+  <link rel="icon" href="assets/favicon/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/favicon/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="assets/favicon/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=EB+Garamond:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/main.css" />
@@ -13,10 +17,10 @@
   <!-- HERO -->
   <header class="landing-hero">
     <nav class="landing-nav" aria-label="Primary">
-      <a class="nav-logo" href="index.html">Jillian Jackson</a>
+      <a class="nav-logo logo-jj" href="index.html" aria-label="Jillian Jackson, home"><span aria-hidden="true">J<span class="logo-rest"><span>illian&nbsp;</span></span>J<span class="logo-rest"><span>ackson</span></span></span></a>
       <ul class="nav-links">
         <li><a href="#work">Projects</a></li>
-        <li><a href="#" download><!-- TODO: link resume file --> Resume</a></li>
+        <li><a href="assets/Jillian-Jackson-Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="index.html">Home</a></li>
       </ul>
@@ -26,7 +30,8 @@
 
   <!-- PROJECT LIST -->
   <main class="project-list" id="work">
-    <a class="project-row" href="#"><!-- TODO: link case study page -->
+    <!-- No href until the case study exists; add one + drop is-soon to link it -->
+    <a class="project-row is-soon">
       <span class="row-year">2026</span>
       <span class="row-main">
         <span class="row-title">Project Windfall</span>
@@ -34,7 +39,7 @@
       </span>
       <span class="row-role">Research</span>
       <span class="row-duration">In-Progress</span>
-      <img class="row-thumb" src="assets/images/thumbnails/IX3THUMBNAIL.png" alt="" loading="lazy" />
+      <span class="row-thumb row-soon">Coming soon</span>
     </a>
 
     <a class="project-row" href="case-studies/design-leadership.html">
@@ -99,7 +104,7 @@
       <a class="nav-logo" href="index.html">Jillian Jackson</a>
       <ul class="nav-links">
         <li><a href="#work">Projects</a></li>
-        <li><a href="#" download>Resume</a></li>
+        <li><a href="assets/Jillian-Jackson-Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="index.html">Home</a></li>
       </ul>

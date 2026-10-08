@@ -1,0 +1,9 @@
+# Ivory (Lineto) trial fonts — licensed for testing only, not for publishing.
+# Remove this line once a web license is purchased.
+assets/fonts/IvoryTrial-*
+
+# Local Claude Code settings
+.claude/
+
+# Microsoft Office lock files (created while a doc is open)
+~$*

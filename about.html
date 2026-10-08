@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About — Jillian Jackson</title>
+  <link rel="icon" href="assets/favicon/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/favicon/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="assets/favicon/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=EB+Garamond:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/main.css" />
@@ -12,10 +16,10 @@
 
   <!-- TOP NAV -->
   <nav class="top-nav" aria-label="Primary">
-    <a class="nav-logo" href="index.html">Jillian Jackson</a>
+    <a class="nav-logo logo-jj" href="index.html" aria-label="Jillian Jackson, home"><span aria-hidden="true">J<span class="logo-rest"><span>illian&nbsp;</span></span>J<span class="logo-rest"><span>ackson</span></span></span></a>
     <ul class="nav-links">
       <li><a href="index.html#work">Projects</a></li>
-      <li><a href="#" download><!-- TODO: link resume file --> Resume</a></li>
+      <li><a href="assets/Jillian-Jackson-Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="index.html">Home</a></li>
     </ul>
@@ -23,34 +27,9 @@
 
   <div class="about-body">
 
-  <!-- STICKY RIGHT COLUMN: photo + stars -->
+  <!-- STICKY RIGHT COLUMN: photo + stars (single transparent PNG) -->
   <aside class="about-right">
-    <div class="about-stars" aria-hidden="true">
-      <svg class="about-star" style="top:6%; left:6%; width:56px; height:56px; transform:rotate(-10deg);" viewBox="0 0 24 24" fill="#e2432b"><path d="M12 2l2.9 6.4L22 9.3l-5 4.9 1.3 7.1L12 17.9 5.7 21.3 7 14.2l-5-4.9 7.1-.9z"/></svg>
-
-      <svg class="about-star" style="top:14%; right:8%; width:70px; height:70px; transform:rotate(14deg);" viewBox="0 0 24 24" fill="#e8b923"><path d="M12 2l2.9 6.4L22 9.3l-5 4.9 1.3 7.1L12 17.9 5.7 21.3 7 14.2l-5-4.9 7.1-.9z"/></svg>
-
-      <svg class="about-star" style="top:26%; left:2%; width:52px; height:52px; transform:rotate(-18deg);" viewBox="0 0 24 24" fill="#2e8fd1"><path d="M12 2l2.9 6.4L22 9.3l-5 4.9 1.3 7.1L12 17.9 5.7 21.3 7 14.2l-5-4.9 7.1-.9z"/></svg>
-
-      <svg class="about-star" style="bottom:28%; right:4%; width:62px; height:62px; transform:rotate(-6deg);" viewBox="0 0 24 24" fill="url(#starGradPink)">
-        <defs>
-          <linearGradient id="starGradPink" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#e8a0d9" />
-            <stop offset="50%" stop-color="#a0c8e8" />
-            <stop offset="100%" stop-color="#c9a0e8" />
-          </linearGradient>
-        </defs>
-        <path d="M12 2l2.9 6.4L22 9.3l-5 4.9 1.3 7.1L12 17.9 5.7 21.3 7 14.2l-5-4.9 7.1-.9z"/>
-      </svg>
-
-      <svg class="about-star" style="bottom:16%; left:8%; width:52px; height:52px; transform:rotate(20deg);" viewBox="0 0 24 24" fill="#8dc63f"><path d="M12 2l2.9 6.4L22 9.3l-5 4.9 1.3 7.1L12 17.9 5.7 21.3 7 14.2l-5-4.9 7.1-.9z"/></svg>
-
-      <svg class="about-star" style="bottom:6%; right:14%; width:58px; height:58px; transform:rotate(-14deg);" viewBox="0 0 24 24" fill="#2e8fd1"><path d="M12 2l2.9 6.4L22 9.3l-5 4.9 1.3 7.1L12 17.9 5.7 21.3 7 14.2l-5-4.9 7.1-.9z"/></svg>
-    </div>
-
-    <div class="about-photo-wrap">
-      <div class="img-block about-photo"><span><!-- TODO: replace with assets/img/about-photo.jpg --> Photo</span></div>
-    </div>
+    <img class="about-img" src="assets/images/ABOUT%20ME/profile%20pic%20and%20stars.png" alt="Jillian Jackson, surrounded by colorful stars" />
   </aside>
 
   <!-- SCROLLING LEFT COLUMN: all text content -->
@@ -63,7 +42,9 @@
         Hi y'all! I'm Jillian &mdash; a researcher and product designer born in Houston, Texas and currently based in St. Louis, MO. I have a background in cultural anthropology and human-computer interaction, and I'm currently pursuing a Master of Design at Washington University in St. Louis. I'm passionate about ethnographic research, participatory design, and bringing community voices into the design process.
       </p>
       <p class="about-contact">
-        j.jillian@wustl.edu &middot; linkedin.com/in/jillianmjackson &middot; St. Louis, MO
+        <button type="button" class="copy-email" data-email="jillianjacksondesign@gmail.com" title="Copy email to clipboard">jillianjacksondesign@gmail.com</button>
+        &middot; <a class="about-link" href="https://www.linkedin.com/in/jillianmjackson" target="_blank" rel="noopener">linkedin.com/in/jillianmjackson</a>
+        &middot; St. Louis, MO
       </p>
     </div>
 
@@ -149,6 +130,7 @@
         <span class="about-skill">User Interviews</span>
         <span class="about-skill">Data Visualization</span>
         <span class="about-skill">Visual Identity</span>
+        <span class="about-skill">Physical Fabrication</span>
         <span class="about-skill">Intermediate Spanish</span>
       </div>
     </section>
@@ -163,7 +145,7 @@
       <a class="nav-logo" href="index.html">Jillian Jackson</a>
       <ul class="nav-links">
         <li><a href="index.html#work">Projects</a></li>
-        <li><a href="#" download>Resume</a></li>
+        <li><a href="assets/Jillian-Jackson-Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="index.html">Home</a></li>
       </ul>
@@ -171,5 +153,6 @@
     <p class="footer-credit">&copy; 2026 Jillian Jackson</p>
   </footer>
 
+  <script src="assets/js/copy-email.js"></script>
 </body>
 </html>
