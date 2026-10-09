@@ -5,64 +5,6 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ── IVORY (Lineto, trial) ──
-   Font files are gitignored (trial license = testing only), so the
-   live site falls back to EB Garamond via --font-serif until a web
-   license is purchased.
-   - Medium covers 500–600, so semibold (600) headings render Medium.
-   - unicode-range lists only the trial's real glyphs. The trial swaps a
-     placeholder in for most punctuation (: ; ! ? ( ) " & – — etc.), so
-     those characters fall through to EB Garamond instead. Drop the
-     unicode-range lines once the full (licensed) font is in place. */
-@font-face {
-  font-family: 'Ivory';
-  src: url('../fonts/IvoryTrial-Light.otf') format('opentype');
-  font-weight: 300; font-style: normal; font-display: swap;
-  unicode-range: U+0020, U+002C-0039, U+0041-005A, U+0061-007A, U+00A0, U+00AA, U+00AD, U+00B2-00B3, U+00B6-00B7, U+00B9-00BA, U+00BC-00BE, U+00C0-00C5, U+00C7-00CF, U+00D1-00D6, U+00D9-00DD, U+00E0-00E5, U+00E7-00EF, U+00F1-00F6, U+00F9-00FD, U+00FF, U+0160-0161, U+0178, U+017D-017E, U+2019, U+2026, U+2122, U+2219, U+FB01-FB02;
-}
-@font-face {
-  font-family: 'Ivory';
-  src: url('../fonts/IvoryTrial-LightItalic.otf') format('opentype');
-  font-weight: 300; font-style: italic; font-display: swap;
-  unicode-range: U+0020, U+002C-0039, U+0041-005A, U+0061-007A, U+00A0, U+00AA, U+00AD, U+00B2-00B3, U+00B6-00B7, U+00B9-00BA, U+00BC-00BE, U+00C0-00C5, U+00C7-00CF, U+00D1-00D6, U+00D9-00DD, U+00E0-00E5, U+00E7-00EF, U+00F1-00F6, U+00F9-00FD, U+00FF, U+0160-0161, U+0178, U+017D-017E, U+2019, U+2026, U+2122, U+2219, U+FB01-FB02;
-}
-@font-face {
-  font-family: 'Ivory';
-  src: url('../fonts/IvoryTrial-Regular.otf') format('opentype');
-  font-weight: 400; font-style: normal; font-display: swap;
-  unicode-range: U+0020, U+002C-0039, U+0041-005A, U+0061-007A, U+00A0, U+00AA, U+00AD, U+00B2-00B3, U+00B6-00B7, U+00B9-00BA, U+00BC-00BE, U+00C0-00C5, U+00C7-00CF, U+00D1-00D6, U+00D9-00DD, U+00E0-00E5, U+00E7-00EF, U+00F1-00F6, U+00F9-00FD, U+00FF, U+0160-0161, U+0178, U+017D-017E, U+2019, U+2026, U+2122, U+2219, U+FB01-FB02;
-}
-@font-face {
-  font-family: 'Ivory';
-  src: url('../fonts/IvoryTrial-Italic.otf') format('opentype');
-  font-weight: 400; font-style: italic; font-display: swap;
-  unicode-range: U+0020, U+002C-0039, U+0041-005A, U+0061-007A, U+00A0, U+00AA, U+00AD, U+00B2-00B3, U+00B6-00B7, U+00B9-00BA, U+00BC-00BE, U+00C0-00C5, U+00C7-00CF, U+00D1-00D6, U+00D9-00DD, U+00E0-00E5, U+00E7-00EF, U+00F1-00F6, U+00F9-00FD, U+00FF, U+0160-0161, U+0178, U+017D-017E, U+2019, U+2026, U+2122, U+2219, U+FB01-FB02;
-}
-@font-face {
-  font-family: 'Ivory';
-  src: url('../fonts/IvoryTrial-Medium.otf') format('opentype');
-  font-weight: 500 600; font-style: normal; font-display: swap;
-  unicode-range: U+0020, U+002C-0039, U+0041-005A, U+0061-007A, U+00A0, U+00AA, U+00AD, U+00B2-00B3, U+00B6-00B7, U+00B9-00BA, U+00BC-00BE, U+00C0-00C5, U+00C7-00CF, U+00D1-00D6, U+00D9-00DD, U+00E0-00E5, U+00E7-00EF, U+00F1-00F6, U+00F9-00FD, U+00FF, U+0160-0161, U+0178, U+017D-017E, U+2019, U+2026, U+2122, U+2219, U+FB01-FB02;
-}
-@font-face {
-  font-family: 'Ivory';
-  src: url('../fonts/IvoryTrial-MediumItalic.otf') format('opentype');
-  font-weight: 500 600; font-style: italic; font-display: swap;
-  unicode-range: U+0020, U+002C-0039, U+0041-005A, U+0061-007A, U+00A0, U+00AA, U+00AD, U+00B2-00B3, U+00B6-00B7, U+00B9-00BA, U+00BC-00BE, U+00C0-00C5, U+00C7-00CF, U+00D1-00D6, U+00D9-00DD, U+00E0-00E5, U+00E7-00EF, U+00F1-00F6, U+00F9-00FD, U+00FF, U+0160-0161, U+0178, U+017D-017E, U+2019, U+2026, U+2122, U+2219, U+FB01-FB02;
-}
-@font-face {
-  font-family: 'Ivory';
-  src: url('../fonts/IvoryTrial-Bold.otf') format('opentype');
-  font-weight: 700; font-style: normal; font-display: swap;
-  unicode-range: U+0020, U+002C-0039, U+0041-005A, U+0061-007A, U+00A0, U+00AA, U+00AD, U+00B2-00B3, U+00B6-00B7, U+00B9-00BA, U+00BC-00BE, U+00C0-00C5, U+00C7-00CF, U+00D1-00D6, U+00D9-00DD, U+00E0-00E5, U+00E7-00EF, U+00F1-00F6, U+00F9-00FD, U+00FF, U+0160-0161, U+0178, U+017D-017E, U+2019, U+2026, U+2122, U+2219, U+FB01-FB02;
-}
-@font-face {
-  font-family: 'Ivory';
-  src: url('../fonts/IvoryTrial-BoldItalic.otf') format('opentype');
-  font-weight: 700; font-style: italic; font-display: swap;
-  unicode-range: U+0020, U+002C-0039, U+0041-005A, U+0061-007A, U+00A0, U+00AA, U+00AD, U+00B2-00B3, U+00B6-00B7, U+00B9-00BA, U+00BC-00BE, U+00C0-00C5, U+00C7-00CF, U+00D1-00D6, U+00D9-00DD, U+00E0-00E5, U+00E7-00EF, U+00F1-00F6, U+00F9-00FD, U+00FF, U+0160-0161, U+0178, U+017D-017E, U+2019, U+2026, U+2122, U+2219, U+FB01-FB02;
-}
-
 :root {
   --bg: #f4f5f7;
   --surface: #eaebef;
@@ -86,7 +28,7 @@
   --nav-h: 64px;
 
   --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-serif: 'Ivory', 'EB Garamond', Georgia, serif;
+  --font-serif: 'Source Serif 4', Georgia, serif;
   --font-meta: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
 }
@@ -164,7 +106,7 @@ a { color: inherit; }
 .nav-logo {
   font-family: var(--font-serif);
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -0.01em;
   text-decoration: none;
   color: var(--text);
@@ -339,7 +281,7 @@ a { color: inherit; }
 .project-title {
   font-family: var(--font-serif);
   font-size: 46px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.12;
   letter-spacing: -0.01em;
   margin-bottom: 20px;
@@ -409,7 +351,7 @@ a { color: inherit; }
 .section-heading {
   font-family: var(--font-serif);
   font-size: 34px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.2;
   max-width: 640px;
   margin-bottom: 24px;
@@ -431,7 +373,7 @@ a { color: inherit; }
 .section-subheading {
   font-family: var(--font-serif);
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.3;
   margin: 40px 0 10px;
 }
@@ -497,7 +439,7 @@ a { color: inherit; }
   background: none;
   font-family: var(--font-serif);
   font-size: 17px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text);
 }
 
@@ -554,7 +496,7 @@ a { color: inherit; }
 .stat-num {
   font-family: var(--font-serif);
   font-size: 40px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.1;
   color: var(--text);
 }
@@ -770,7 +712,7 @@ footer {
 .footer-links a {
   font-family: var(--font-serif);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
   color: var(--text-55);
 }
@@ -1042,7 +984,7 @@ footer {
 
 .shallow-title {
   font-family: var(--font-serif);
-  font-weight: 600;
+  font-weight: 500;
   font-size: 30px;
   line-height: 1.3;
   max-width: 460px;
@@ -1181,7 +1123,7 @@ footer {
 
 .about-heading {
   font-family: var(--font-serif);
-  font-weight: 600;
+  font-weight: 500;
   font-size: 42px;
   color: var(--text);
   margin-bottom: 20px;
