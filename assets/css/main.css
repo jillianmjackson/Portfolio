@@ -726,21 +726,30 @@ footer {
 .menu-toggle {
   display: none;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   gap: 5px;
   width: 40px;
   height: 40px;
   margin-right: -8px; /* optical alignment with the nav's right padding */
-  padding: 8px;
+  padding: 0;
+  color: var(--text);
   background: none;
   border: none;
+  border-radius: 0;
+  -webkit-appearance: none; /* drop iOS Safari's native button styling */
+  appearance: none;
   cursor: pointer;
 }
 
+/* Explicit width: Safari doesn't reliably stretch children of a flex
+   <button>, which left the bars 0px wide (clickable but invisible) */
 .menu-toggle span {
   display: block;
+  flex: none;
+  width: 22px;
   height: 2px;
-  background: var(--text);
+  background: currentColor;
   border-radius: 2px;
   transition: transform 0.25s ease, opacity 0.2s ease;
 }
