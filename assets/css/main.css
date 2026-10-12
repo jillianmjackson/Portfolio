@@ -719,6 +719,120 @@ footer {
 
 .footer-links a:hover { color: var(--text); }
 
+/* Anchor jumps (sidebar / mobile menu) land below the fixed top nav */
+.main [id] { scroll-margin-top: calc(var(--nav-h) + 16px); }
+
+/* ── HAMBURGER (deep case studies, mobile only) ── */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  margin-right: -8px; /* optical alignment with the nav's right padding */
+  padding: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+/* Bars → ✕ while open */
+.menu-open .menu-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-open .menu-toggle span:nth-child(2) { opacity: 0; }
+.menu-open .menu-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Site links copied into the panel by menu.js — mobile only */
+.sidebar-site-links { display: none; }
+
+/* ── DEEP CASE STUDY: MOBILE ──
+   The fixed 200px sidebar becomes a drop-down panel under the nav,
+   and the content goes full width. */
+@media (max-width: 900px) {
+  .top-nav { padding: 0 24px; }
+  .top-nav.has-menu .nav-links { display: none; }
+  .menu-toggle { display: flex; }
+
+  .sidebar {
+    top: var(--nav-h);
+    right: 0;
+    width: auto;
+    height: auto;
+    max-height: calc(100dvh - var(--nav-h));
+    padding: 24px 24px 28px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 24px 48px rgba(18, 19, 22, 0.12);
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s linear 0.2s;
+  }
+
+  .menu-open .sidebar {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .menu-open { overflow: hidden; } /* lock page scroll behind the panel */
+
+  .sidebar-back { margin-bottom: 16px; }
+  .sidebar-nav a { font-size: 15px; padding: 7px 0 7px 14px; }
+  .sidebar-nav a.sub { font-size: 14px; padding-left: 26px; }
+
+  .sidebar-site-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    list-style: none;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+
+  .sidebar-site-links a {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    text-decoration: none;
+    color: var(--text);
+  }
+
+  /* Content: full width, tighter spacing, smaller type */
+  .main { margin-left: 0; padding-bottom: 80px; }
+  .project-header { padding: 40px 24px 0; }
+  .project-title { font-size: 34px; }
+  .project-subtitle { font-size: 15px; margin-bottom: 32px; }
+  .meta-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .section { padding: 56px 24px 0; }
+  .section-heading { font-size: 28px; }
+  .section-subheading { font-size: 20px; }
+  .section-lead { font-size: 17px; }
+
+  .img-half-row { grid-template-columns: 1fr; }
+
+  /* Captioned media rows (e.g. Brooklyn's 3 phone demos) stack;
+     uncaptioned pairs (Tap to Map) stay side by side at equal height */
+  .media-row:has(> figure) { flex-direction: column; gap: 40px; }
+  .media-row:has(> figure) > figure { flex: none; width: min(100%, 300px); }
+
+  .case-table { font-size: 13px; }
+  .case-table th, .case-table td { padding-right: 12px; }
+
+  footer { margin-left: 0; padding: 48px 24px 40px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
+}
+
 /* ============================================
    LANDING PAGE
    ============================================ */
