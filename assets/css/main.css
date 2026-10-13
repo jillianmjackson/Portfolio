@@ -521,6 +521,40 @@ a { color: inherit; }
   margin-top: 32px;
 }
 
+/* ── HOVER-TO-PLAY HINT ──
+   hover-video.js wraps each .hover-video in a .video-frame (which takes
+   over the video's layout classes) and adds a .video-hint pill. The hint
+   fades out while the video plays; touch devices autoplay, so no hint. */
+.video-frame { position: relative; }
+
+.video-frame > video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.video-hint {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  padding: 6px 12px;
+  font-family: var(--font-meta);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  color: #fff;
+  background: rgba(18, 19, 22, 0.72);
+  border-radius: 999px;
+  pointer-events: none; /* never blocks the hover on the video */
+  transition: opacity 0.25s ease;
+}
+
+.video-frame.is-playing .video-hint { opacity: 0; }
+
+@media (hover: none) {
+  .video-hint { display: none; }
+}
+
 /* Small source images — show at native size, don't upscale */
 .case-img-narrow { max-width: 440px; }
 
